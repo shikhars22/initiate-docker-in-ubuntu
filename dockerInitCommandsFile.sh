@@ -19,3 +19,5 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo docker run hello-world
 sudo docker ps -a
 sudo docker images
+docker-compose -v
+docker -v
