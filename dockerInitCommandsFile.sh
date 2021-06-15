@@ -1,6 +1,6 @@
 sudo apt-get remove docker docker-engine docker.io containerd runc
-sudo apt-get update -y
-sudo apt-get install -y \
+sudo apt-get update
+sudo apt-get install \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -10,8 +10,15 @@ sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmo
 sudo echo \
   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update -y
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
 sudo docker run hello-world
 sudo docker ps -a
 sudo docker images
+
+sudo apt update -y
+sudo apt upgrade -y
+sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose -v
+docker -v
