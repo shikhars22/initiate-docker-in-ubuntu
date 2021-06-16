@@ -23,4 +23,4 @@ docker-compose -v
 docker -v
 #docker stop $(docker ps | awk '{print $1}')
 #docker rm $(docker ps -a | awk '{print $1}')
-#docker rm $(docker images | awk '{print $3}')
+#docker rmi $(docker images | awk '{print $3}')
