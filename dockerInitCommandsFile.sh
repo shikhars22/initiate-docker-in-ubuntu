@@ -21,6 +21,6 @@ sudo docker ps -a
 sudo docker images
 docker-compose -v
 docker -v
-#docker stop $(docker ps | awk '{print $1}')
-#docker rm $(docker ps -a | awk '{print $1}')
-#docker rmi $(docker images | awk '{print $3}')
+#docker stop $(docker ps | awk 'NR>1{print $1}')
+docker rm $(docker ps -a | awk 'NR>1{print $1}')
+docker rmi $(docker images | awk 'NR>1{print $3}')
